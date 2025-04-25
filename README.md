@@ -185,6 +185,7 @@ graph TD
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
+
 ---
 
 For full documentation, visit: [SEM4 EVENTGALLERY Documentation](https://noluchs.github.io/SEM4-EVENTGALLERY/)
