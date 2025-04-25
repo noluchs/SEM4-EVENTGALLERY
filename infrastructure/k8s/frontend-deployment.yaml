@@ -13,8 +13,50 @@ spec:
       labels:
         app: eventgallery-frontend
     spec:
-    containers:
-      name: frontend
-        - image: ghcr.io/noluchs/sem4-eventgallery/eventgallery-frontend:latest
+      containers:
+        - name: frontend
+          image: ghcr.io/noluchs/sem4-eventgallery/eventgallery-frontend:d3b468b45ecb7cebc8a7f5aeb43fe6024d4b5033
           ports:
             - containerPort: 3000
+          env:
+            - name: BACKEND_URL
+              value: "http://eventgallery-backend:5000"
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "125m"
+            limits:
+              memory: "256Mi"
+              cpu: "250m"
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 3000
+            initialDelaySeconds: 15
+            periodSeconds: 20
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 3000
+            initialDelaySeconds: 5
+            periodSeconds: 10
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: frontend-hpa
+  namespace: eventgallery
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: eventgallery-frontend
+  minReplicas: 2
+  maxReplicas: 10
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 70

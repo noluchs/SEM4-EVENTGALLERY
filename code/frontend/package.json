@@ -5,7 +5,9 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "test": "react-scripts test --passWithNoTests",
+    "test:ci": "react-scripts test --watchAll=false --passWithNoTests"
   },
   "dependencies": {
     "@auth0/auth0-spa-js": "^2.1.3",
@@ -14,7 +16,7 @@
     "axios": "^1.7.2",
     "bootstrap": "^5.3.3",
     "core-js": "^3.8.3",
-    "express": "^4.19.2",
+    "express": "^4.21.2",
     "morgan": "^1.10.0",
     "pinia": "^2.1.7",
     "vite": "^5.3.1",
