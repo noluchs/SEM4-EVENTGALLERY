@@ -20,8 +20,21 @@
               "icon": "lucide-file",
               "title": "4.7 Secret und Config Management"
             }
+          },
+          {
+            "id": "7b1e4303491e46a0",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.8.9"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.8.9"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -40,7 +53,8 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
+                "sortOrder": "alphabetical",
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "Dateiexplorer"
@@ -162,7 +176,7 @@
       "command-palette:Befehlspalette öffnen": false
     }
   },
-  "active": "7951076f8eda210e",
+  "active": "7b1e4303491e46a0",
   "lastOpenFiles": [
     "4_Deployment/4.6 AWS S3 & Amazon Rekognition.md",
     "4_Deployment/4.7 Secret und Config Management.md",
